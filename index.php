@@ -1,3 +1,14 @@
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+$params  = \Symfony\Component\Yaml\Yaml::parse(file_get_contents('config.yml'));
+$client = new \Google_Client();
+$client->setDeveloperKey($params['google-api-key']);
+
+$calendarService = new \Google_Service_Calendar($client);
+
+$cal = new \Rosa\Calendar($calendarService, $params['google-calendar-id']);
+?>
 <!DOCTYPE HTML>
 <!--
 	Solid State by HTML5 UP
@@ -119,29 +130,13 @@
 									<h2 class="major">Meet DSA</h2>
 									<p>DSA members are already supporting existing struggles, organizing new ones, and educating themselves. Here are upcoming events DSA members will be attending: </p>
 									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="dist/images/vigil.jpeg" alt="" /></a>
-											<h3 class="major">Vigil for the Affordable Care Act</h3>
-											<p>Wednesday March 22, 7:30 pm at the Walnut Street Bridge.</p>
-										</article>
-										<article>
-											<a href="https://www.facebook.com/events/252458611870192/" class="image"><img src="dist/images/grownooga.jpg" alt="" /></a>
-											<h3 class="major">Grownooga 2017</h3>
-											<p>Grownooga is a community event to help the activist community in Chattanooga connect.</p>
-											<a href="https://www.facebook.com/events/252458611870192/" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="https://www.facebook.com/events/588366488034072/" class="image"><img src="dist/images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Fem Jam Poetry Slam</h3>
-											<p>Join the Intersectional Feminist Alliance for a night of poetry and express yourself.</p>
-											<a href="https://www.facebook.com/events/588366488034072/" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="https://www.meetup.com/Chattanooga-Democratic-Socialists-of-America/events/238565167/" class="image"><img src="dist/images/jacobin.png" alt="" /></a>
-											<h3 class="major">Jacobin Reading Group</h3>
-											<p>We take some time to read and discuss articles from Jacobin magazine.</p>
-											<a href="https://www.meetup.com/Chattanooga-Democratic-Socialists-of-America/events/238565167/" class="special">Learn more</a>
-										</article>
+                                        <?php foreach($cal->getNextFourEvents() as $event) : ?>
+                                            <article>
+                                                <span class="image"><img src="<?= $event->attachments[0]->fileUrl ?>" alt="" /></span>
+                                                <h3 class="major"><?= $event->summary ?></h3>
+                                                <?= $event->description ?>
+                                            </article>
+                                        <?php endforeach; ?>
 									</section>
 								</div>
 							</section>

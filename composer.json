@@ -1,0 +1,21 @@
+{
+    "name": "camilopayan/rosa",
+    "description": "DSA Chattanooga Single Page Website",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Camilo Payan",
+            "email": "camilo@camilopayan.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rosa\\": "src/php"
+        }
+    },
+    "require": {
+        "google/apiclient": "^2.0",
+        "symfony/yaml": "^3.2"
+    }
+}

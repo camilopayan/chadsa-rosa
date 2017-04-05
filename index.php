@@ -1,13 +1,8 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-$params  = \Symfony\Component\Yaml\Yaml::parse(file_get_contents('config.yml'));
-$client = new \Google_Client();
-$client->setDeveloperKey($params['google-api-key']);
-
-$calendarService = new \Google_Service_Calendar($client);
-
-$cal = new \Rosa\Calendar($calendarService, $params['google-calendar-id']);
+$data = new \Rosa\Data\YamlDataStore('data.yml');
+$cal = new \Rosa\Calendar($data);
 ?>
 <!DOCTYPE HTML>
 <!--

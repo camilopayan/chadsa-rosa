@@ -2,7 +2,7 @@
 
 namespace Rosa;
 
-use Google_Service_Calendar;
+use Rosa\Data\IDatastore;
 
 /**
  * Class Calendar
@@ -11,23 +11,16 @@ use Google_Service_Calendar;
 class Calendar
 {
     /**
-     * The Google calendar service
+     * The data store given.
      *
-     * @var Google_Service_Calendar
+     * @var IDataStore
      */
-    protected $calService;
-
-    /**
-     * The calendar ID for the DSA calendar
-     *
-     * @var string
-     */
-    protected $calendarId;
+    protected $dataStore;
 
     /**
      * @param mixed Google_Service_Calendar $calService
      */
-    public function __construct(Google_Service_Calendar $calService, string $calendarId)
+    public function __construct(IDataStore $dataStore)
     {
         $this->calService = $calService;
         $this->calendarId = $calendarId;
@@ -35,8 +28,6 @@ class Calendar
 
     public function getNextFourEvents()
     {
-        return $this->calService->events->listEvents($this->calendarId, [
-            'maxResults' => 4
-            ]);
+        return $dataStore->getNextFourEvents();
     }
 }

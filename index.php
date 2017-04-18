@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-$data = new \Rosa\Data\YamlDataStore('data.yml');
+$data = ( new \Rosa\Data\YamlEventProcessor() )->processEvents('events.yml');
 $cal = new \Rosa\Calendar($data);
 ?>
 <!DOCTYPE HTML>
@@ -127,9 +127,12 @@ $cal = new \Rosa\Calendar($data);
 									<section class="features">
                                         <?php foreach($cal->getNextFourEvents() as $event) : ?>
                                             <article>
-                                                <span class="image"><img src="<?= $event->attachments[0]->fileUrl ?>" alt="" /></span>
-                                                <h3 class="major"><?= $event->summary ?></h3>
+                                                <span class="image"><img src="<?= $event->imageUrl ?>" alt="" /></span>
+                                                <h3 class="major"><?= $event->name ?></h3>
                                                 <?= $event->description ?>
+                                                <?php if: ?>
+                                                    <a href="<?= $event->url ?>">Learn More</a>
+                                                <?php endif; ?>
                                             </article>
                                         <?php endforeach; ?>
 									</section>

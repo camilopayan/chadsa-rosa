@@ -17,6 +17,13 @@ class YamlDataStore implements IDataStore
     protected $data;
 
     /**
+     * The event objects.
+     *
+     * @var Event
+     */
+    protected $events;
+
+    /**
      * Constructor.
      *
      * @param string $filename
@@ -26,10 +33,4 @@ class YamlDataStore implements IDataStore
         $this->data = Yaml::parse(file_get_contents($filename));
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function getNextFourEvents()
-    {
-    }
 }

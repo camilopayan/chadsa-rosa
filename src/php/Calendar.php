@@ -22,8 +22,7 @@ class Calendar
      */
     public function __construct(IDataStore $dataStore)
     {
-        $this->calService = $calService;
-        $this->calendarId = $calendarId;
+        $this->dataStore = $dataStore;
     }
 
     public function getNextFourEvents()

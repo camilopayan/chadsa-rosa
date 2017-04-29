@@ -1,8 +1,12 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-$data = ( new \Rosa\Data\YamlEventProcessor() )->processEvents('events.yml');
-$cal = new \Rosa\Calendar($data);
+use Rosa\Data\YamlDataLoader;
+use Rosa\Data\EventProcessor;
+use Rosa\Calendar;
+
+$events = EventProcessor::processEvents(new YamlDataLoader('events.yml'));
+$cal = new Calendar($events);
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -129,9 +133,17 @@ $cal = new \Rosa\Calendar($data);
                                             <article>
                                                 <span class="image"><img src="<?= $event->imageUrl ?>" alt="" /></span>
                                                 <h3 class="major"><?= $event->name ?></h3>
-                                                <?= $event->description ?>
-                                                <?php if: ?>
-                                                    <a href="<?= $event->url ?>">Learn More</a>
+                                                <div class="place">
+                                                    <span class="fa fa-map-marker"></span> <?= $event->place ?>
+                                                </div>
+                                                <div class="time">
+                                                    <span class="fa fa-clock-o"></span> <?= $event->startTime->format('D F j, g:ia') ?>
+                                                </div>
+                                                <div>
+                                                    <?= $event->description ?>
+                                                </div>
+                                                <?php if (!is_null($event->url)): ?>
+                                                    <div><a href="<?= $event->url ?>">Learn More</a></div>
                                                 <?php endif; ?>
                                             </article>
                                         <?php endforeach; ?>

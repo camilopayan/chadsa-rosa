@@ -1,6 +1,8 @@
 <?php
 
-namespace ;
+namespace Rosa;
+
+use DateTime;
 
 /**
  * Class Event
@@ -13,56 +15,63 @@ class Event
      *
      * @var string
      */
-    protected $url;
+    public $url;
+
+    /**
+     * The name of the event.
+     *
+     * @var string
+     */
+    public $name;
 
     /**
      * The description of the event.
      *
      * @var string
      */
-    protected $description;
+    public $description;
 
     /**
      * The starting time for the event.
      *
      * @var DateTime
      */
-    protected $startTime;
-
-    /**
-     * The ending time of the event.
-     *
-     * @var DateTime
-     */
-    protected $endTime;
+    public $startTime;
 
     /**
      * The url for the image related to the event.
      *
      * @var string
      */
-    protected $imageUrl;
+    public $imageUrl;
+
+    /**
+     * The place for the event.
+     *
+     * @var string
+     */
+    public $place;
 
     /**
      * @param string $url
      * @param string $description
      * @param DateTime $startTime
-     * @param DateTime $endTime
      * @param string $imageUrl
      */
     public function __construct(
-        string $url,
-        string $description,
+        string $name,
         DateTime $startTime,
-        DateTime $endTime,
-        string $imageUrl
+        string $place,
+        string $description,
+        string $imageUrl,
+        string $url = null
     )
     {
-        $this->url = $url;,
-        $this->description = $description;,
-        $this->startTime = $startTime;,
-        $this->endTime = $endTime;,
-        $this->canonicalLink = $canonicalLink;,
+        $this->name = $name;
+        $this->place = $place;
+        $this->description = $description;
+        $this->startTime = $startTime;
+        $this->url = $url;
         $this->imageUrl = $imageUrl;
     }
 }

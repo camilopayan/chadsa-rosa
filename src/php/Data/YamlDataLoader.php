@@ -6,8 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 use Rosa\Data\IDataLoader;
 
 /**
- * Class YamlDataLoader
- * @author yourname
+ * Fulfills the IDataLoader and loads events from a yaml file.
  */
 class YamlDataLoader implements IDataLoader
 {

@@ -3,8 +3,7 @@
 namespace Rosa\Data;
 
 /**
- * Interface IDataLoader
- * @author yourname
+ * Loads events from some data store.
  */
 interface IDataLoader
 {

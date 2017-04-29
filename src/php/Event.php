@@ -5,8 +5,7 @@ namespace Rosa;
 use DateTime;
 
 /**
- * Class Event
- * @author yourname
+ * An event model
  */
 class Event
 {

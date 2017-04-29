@@ -6,8 +6,7 @@ use Rosa\Data\IDataLoader;
 use Rosa\Event;
 
 /**
- * Class EventProcessor
- * @author Camilo Payan
+ * This classs processes the data into an array of event models.
  */
 class EventProcessor
 {

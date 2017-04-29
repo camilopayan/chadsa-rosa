@@ -5,8 +5,7 @@ namespace Rosa;
 use Rosa\Event;
 
 /**
- * Class Calendar
- * @author Camilo Payan
+ * A calendar model.
  */
 class Calendar
 {

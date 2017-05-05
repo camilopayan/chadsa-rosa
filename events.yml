@@ -1,26 +1,26 @@
 -
-  name: March for Science
-  time: 2017-04-22 13:00:00
-  place: Main Terrain Art Park, Chattanooga
-  url: https://www.facebook.com/events/1871634806449162/
-  description: March to let the administration know that America wants science funding!
-  image: jacobin.png
-- 
-  name: May Day
-  time: 2017-05-01 15:00:00
-  place: Renaissance Park, Chattanooga
-  url: https://www.facebook.com/events/1886164468270279/
-  description: May Day is the original labor day, and is a time to reflect on labor's achievements.
-  image: jacobin.png
-- 
-  name: Reading Group - The New Jim Crow
-  time: 2017-04-24 19:00:00
+  name: DSA Reading Group
+  time: 2017-05-08 19:00:00
   place: Frothy Monkey, Chattanooga, TN
-  description: Join us to talk about chapters 3 and 4 of The New Jim Crow, by Michelle Alexander
-  image: jacobin.png
+  description: Join us to wrap up The New Jim Crow, by Michelle Alexander
+  image: new-jim-crow-graphic.png
+-
+  name: DSA Reading Group
+  time: 2017-05-22 19:00:00
+  place: Frothy Monkey, Chattanooga, TN
+  description: We're starting Utopia For Realists, by Rutger Bregman
+  image: utopia-for-realists-dsa-reading.png
+-
+  name: General Meeting
+  time: 2017-05-10 19:00:00
+  place: Unitarian Universalist Church of Chattanooga
+  description: Plan upcoming events and learn about socialism!
+  image: gen-meeting-may.jpg
+  url: https://www.facebook.com/events/1970002169899290/
 -
   name: Jacobin Reading Group
-  time: 2017-04-25 19:00:00
+  time: 2017-05-30 19:00:00
   place: The Honest Pint, Chattanooga
   description: Talk about the latest from Jacobin Magazine.
-  image: jacobin.jpg
+  image: jacobin.png
+  url: https://www.facebook.com/events/1675924312714311/

@@ -33,7 +33,10 @@ class EventProcessor
             );
         }
         usort($events, function($a, $b) {
-            return $a->startTime <=> $b->startTime;
+            if (is_null($a->startTime)) {
+                return 1;
+            }
+            return $b->startTime <=> $a->startTime;
         });
         return $events;
     }

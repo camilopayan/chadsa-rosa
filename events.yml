@@ -1,5 +1,17 @@
 -
   name: DSA Reading Group
+  time: 2017-08-14 19:00:00
+  place: Frothy Monkey, Chattanooga, TN
+  description: Join us to read about Socialist Feminism
+  image: dsa-reading-group-october.png
+-
+  name: Jacobin Reading Group
+  time: 2017-08-29 19:00:00
+  place: The Honest Pint, Chattanooga
+  description: Talk about the latest from Jacobin Magazine.
+  image: jacobin.png
+-
+  name: DSA Reading Group
   time: 2017-05-08 19:00:00
   place: Frothy Monkey, Chattanooga, TN
   description: Join us to wrap up The New Jim Crow, by Michelle Alexander

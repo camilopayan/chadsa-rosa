@@ -36,7 +36,7 @@ class Calendar
 
     public function getNextXEvents($x)
     {
-        return array_slice($this->events, 0, $x);
+        return array_reverse(array_slice($this->events, 0, $x));
     }
 
 }

@@ -26,6 +26,17 @@ class Calendar
 
     public function getNextFourEvents()
     {
-        return array_slice($this->events, 0, 4);
+        return $this->getNextXEvents(4);
     }
+
+    public function getNextTwoEvents()
+    {
+        return $this->getNextXEvents(2);
+    }
+
+    public function getNextXEvents($x)
+    {
+        return array_slice($this->events, 0, $x);
+    }
+
 }

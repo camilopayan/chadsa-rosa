@@ -83,6 +83,10 @@ $cal = new Calendar($events);
 										<label for="mce-EMAIL">Email</label>
 										<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 									</div>
+									<div class="mc-field-group field">
+										<label for="mce-FNAME">Name</label>
+										<input type="text" value="" name="FNAME" class="required fname" id="mce-FNAME">
+									</div>
 									<div id="mce-responses" class="clear">
 										<div class="response" id="mce-error-response" style="display:none"></div>
 										<div class="response" id="mce-success-response" style="display:none"></div>
@@ -129,7 +133,7 @@ $cal = new Calendar($events);
 									<h2 class="major">Meet DSA</h2>
 									<p>DSA members are already supporting existing struggles, organizing new ones, and educating themselves. Here are upcoming events DSA members will be attending: </p>
 									<section class="features">
-                                        <?php foreach($cal->getNextFourEvents() as $event) : ?>
+                                        <?php foreach($cal->getNextTwoEvents() as $event) : ?>
                                             <article>
                                                 <span class="image"><img src="<?= $event->imageUrl ?>" alt="" /></span>
                                                 <h3 class="major"><?= $event->name ?></h3>
